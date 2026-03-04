@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "home": "Ana Səhifə",
+    "about": "Haqqımızda",
+    "contact": "Əlaqə",
+    "games": "Oyunlar"
+  },
+  "home": {
+    "title": "TƏLƏBƏ SEÇİN",
+    "subtitle": "Profili görmək üçün tələbə kartına klikləyin. Klaviatura oxları və ya mobilda sürüşdürmə ilə keçid edin.",
+    "age": "Yaş",
+    "skills": "Bacarıqlar",
+    "about": "Haqqında"
+  },
+  "controls": {
+    "sound_on": "Səs Açıq",
+    "sound_off": "Səs Bağlı",
+    "light_mode": "İşıqlı Rejim",
+    "dark_mode": "Qaranlıq Rejim"
+  },
+  "tutorial": {
+    "desktop_title": "Təlimat və İdarəetmə",
+    "mobile_title": "Mobil İdarəetmə",
+    "start_button": "BAŞLA",
+    "mouse": "Siçan / Trackpad",
+    "mouse_desc": "Profilləri görmək üçün tələbə kartlarına klikləyin. Məzmunu araşdırmaq üçün sürüşdürün.",
+    "keyboard": "Klaviatura",
+    "keyboard_desc": "Tələbələri dəyişmək üçün Sol/Sağ oxlardan istifadə edin. Profili açmaq üçün Enter, ana səhifəyə qayıtmaq üçün Escape basın.",
+    "touch": "Sensor Ekran",
+    "touch_swipe": "Tələbələr arasında keçid üçün Sola/Sağa sürüşdürün.",
+    "touch_tap": "Profili açmaq üçün tələbə kartına toxunun.",
+    "touch_tap_title": "Toxunma",
+    "touch_down": "Geri qayıtmaq üçün geri düyməsini və ya aşağı sürüşdürməni istifadə edin.",
+    "touch_down_title": "Aşağı Sürüşdürmə",
+    "games": "Oyunlar",
+    "games_desc": "Yaddaş, Krestik-Nolik, Sürətli Yazı və digər oyunları oynamaq üçün navbardan Oyunları açın!"
+  },
+  "about": {
+    "title": "Haqqımızda",
+    "description": "FULL STACK 5 müasir rəqəmsal təcrübələrin sərhədlərini aşmağa həsr olunmuş elit veb inkişaf etdirmə komandasıdır. Estetik parlaqlığı möhkəm mühəndisliklə birləşdirmək vizyonu ilə qurulan komandamız immersiv, yüksək performanslı tətbiqlər qurmaqda ixtisaslaşıb. Texnoloji yığınımız diqqətlə seçilmişdir: dinamik interfeyslər üçün React, sürətli build-lər üçün Vite, 3D renderləmə üçün Three.js və axıcı animasiyalar üçün Framer Motion. Məqsədimiz sənayedə yeni standart müəyyən etmək və funksionallıqla premium dizaynın qüsursuz birlikdə ola biləcəyini sübut etməkdir."
+  },
+  "contact": {
+    "title": "Əlaqə",
+    "subtitle": "Bizimlə rəqəmsal əlaqə qurun.",
+    "name": "Adınız",
+    "email": "E-poçt",
+    "message": "Mesajınız",
+    "send": "Göndər",
+    "sending": "Göndərilir...",
+    "success": "Mesajınız uğurla göndərildi!",
+    "setup_note": "Sistem hazırdır. EmailJS açarlarını qoymağı unutmayın."
+  },
+  "footer": {
+    "copyright": "Bütün hüquqlar qorunur. Dizayn və inkişaf: R. Hüseynzadə & FS5."
+  },
+  "overlay": {
+    "about_title": "Haqqında",
+    "skills_title": "Bacarıqlar",
+    "close_hint": "Bağlamaq üçün Escape basın və ya geri klikləyin"
+  },
+  "ramazan": {
+    "click_to_unlock": "KİLİDİ AÇMAQ ÜÇÜN KLİKLƏYİN",
+    "connecting": "Bağlantı qurulur...",
+    "encrypted": "Məlumatlar kriptoqrafik şifrələnib.",
+    "hint": "Deşifrələmə komandasını daxil edin. İpucu: HACK_CORE",
+    "command_accepted": "[OK] Komanda qəbul edildi. Sistem sındırılır...",
+    "bypass_success": "Bypass uğurla başa çatdı.",
+    "data_decrypting": "Məlumatlar açılır...",
+    "wrong_command": "[XƏTA] Səhv komanda. Yenidən cəhd edin."
+  },
+  "secret_video": {
+    "title": "SƏNƏ ÖZƏL!",
+    "close": "Bağla / Davam Et"
+  },
+  "common": {
+    "language": "Dil",
+    "student_not_found": "Tələbə tapılmadı.",
+    "page_not_found": "Bu səhifə tapılmadı.",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "title": "Klaviatura Qısayolları",
+    "switch_students": "Tələbələri Dəyişdir",
+    "open_profile": "Profili Aç",
+    "go_home": "Ana Səhifə",
+    "toggle_help": "Kömək Paneli",
+    "press_to_close": "Bağlamaq üçün ? basın"
+  },
+  "guide": {
+    "welcome_title": "FULL STACK 5-ə Xoş Gəldiniz",
+    "welcome_desc": "Bu interaktiv bələdçi sizə bu premium portfolio təcrübəsinin bütün xüsusiyyətlərini göstərəcək.",
+    "nav_title": "Naviqasiya",
+    "nav_desc": "Ana Səhifə, Haqqımızda, Əlaqə və Oyunlar səhifələri arasında keçid üçün yuxarıdakı menyudan istifadə edin. Mobilda burger menyuya toxunun.",
+    "students_title": "Tələbə Şəbəkəsi",
+    "students_desc": "Profilə baxmaq üçün istənilən tələbə kartına klikləyin. Sıranı dəyişmək üçün sürükləyin. Oxlardan və ya sürüşdürməkdən istifadə edin.",
+    "keyboard_title": "Klaviatura İdarəetməsi",
+    "keyboard_desc": "Sol/Sağ oxlar: Tələbə dəyişdir. Enter: Profil aç. Escape: Ana səhifə. ?: Qısayollar.",
+    "games_title": "Oyun Mərkəzi",
+    "games_desc": "Yaddaş, Krestik-Nolik, Sürətli Yazı, Reaksiya Testi oynamaq və ya rəsm çəkmək üçün navbardan Oyunları açın!",
+    "themes_title": "Temalar və Fərdiləşdirmə",
+    "themes_desc": "Başlıqdan qaranlıq/işıqlı rejimi dəyişdirin. Tema Yaradıcısından (üzən + düymə) öz rəng sxeminizi qurun.",
+    "extras_title": "Gizli Xüsusiyyətlər",
+    "extras_desc": "Suallar üçün chatbot istifadə edin. Xüsusiyyətləri araşdıraraq nailiyyət nişanları qazanın. Profilləri paylaşın! Atəşfəşanlıq kətanını sınayın!",
+    "skip": "Keç",
+    "back": "Geri",
+    "next": "İrəli",
+    "finish": "Bitir"
+  },
+  "games": {
+    "title": "Oyun Mərkəzi",
+    "subtitle": "Oynamaq üçün oyun seçin",
+    "memory": "Yaddaş",
+    "memory_desc": "Cütləri tap",
+    "tictactoe": "Krestik-Nolik",
+    "tictactoe_desc": "AI-ni məğlub et",
+    "typing": "Sürətli Yazı",
+    "typing_desc": "Yazı sürəti testi",
+    "reaction": "Reaksiya",
+    "reaction_desc": "Refleksini yoxla",
+    "draw": "Rəsm",
+    "draw_desc": "Sərbəst kətan",
+    "moves": "GEDİŞ",
+    "restart": "YENİDƏN",
+    "you_win": "QAZANDIN!",
+    "you": "SƏN",
+    "ai": "AI",
+    "draw_result": "HEÇHEÇƏ",
+    "ai_wins": "AI QAZANDI",
+    "play_again": "YENİDƏN OYNA",
+    "accuracy": "DƏQİQLİK",
+    "best": "ƏN YAXŞI",
+    "start_typing": "Yazmağa başla...",
+    "try_again": "YENİDƏN CƏHD ET",
+    "click_to_start": "BAŞLAMAQ ÜÇÜN KLİKLƏ",
+    "test_reaction": "Reaksiya sürətini yoxla",
+    "wait": "GÖZLƏYİN...",
+    "click_when_green": "Yaşıl olanda klikləyin",
+    "click_now": "İNDİ KLİKLƏ!",
+    "too_early": "ÇOX ERKƏN!",
+    "click_try_again": "Yenidən cəhd üçün klikləyin",
+    "avg": "ORT",
+    "clear": "TƏMİZLƏ",
+    "save": "SAXLA"
+  },
+  "penalty": {
+    "title": "SİSTEM KİLİDLƏNDİ",
+    "line1": "[!] KRİTİK TƏHLÜKƏ AŞKARLANDI. ƏKSTƏDBIR AKTİVLƏŞDİRİLİR...",
+    "line2": "[!] CİHAZ BARMAQ İZİ ÇIXARILIR...",
+    "os": "OS/BRAUZER: {{browser}}",
+    "resolution": "EKRAN ÖLÇÜSÜ: {{width}} x {{height}}",
+    "ip": "PUBLIC IP HƏDƏFİ KİLİDLƏNDİ: {{ip}}",
+    "uploading": "[!] MƏLUMATLAR ƏSAS SERVERƏ YÜKLƏNİR...",
+    "dots": "...",
+    "banned": "[!] SİZ 1 SAATLIQ BLOK EDİLDİNİZ. YENİDƏN GİRMƏYƏ ÇALIŞMAYIN.",
+    "footer": "TƏHLÜKƏSİZ BAĞLANTI KƏSİLDİ. CİHAZ QEYDƏ ALINDI."
+  }
+}

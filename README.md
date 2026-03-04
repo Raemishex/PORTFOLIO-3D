@@ -1,16 +1,49 @@
-# React + Vite
+# 3D Portfolio - Full Stack 5
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🇦🇿 Azərbaycanca
 
-Currently, two official plugins are available:
+Bu layihə "Full Stack 5" tələbələri üçün hazırlanmış interaktiv 3D portfeliolar toplusudur. Layihə müasir web texnologiyalarından və 3D qrafikasından istifadə edərək istifadəçilərə vizual cəhətdən zəngin bir təcrübə təqdim edir.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🚀 Texnologiyalar
+* **React & Vite**: Sürətli və inkişaf etmiş web tətbiqetmə qurucusu
+* **Three.js & React Three Fiber**: Tətbiqdə 3D obyektləri və mühitləri yaratmaq üçün
+* **@react-three/drei**: React Three Fiber üçün faydalı komponentlər
+* **Framer Motion, GSAP, Anime.js**: Qabaqcıl animasiyalar və xüsusi vizual effektlər üçün
+* **Zustand**: Qlobal state (vəziyyət) menecmenti üçün
+* **i18next**: Çoxdilli dəstək (Azərbaycan və İngilis dilləri)
+* **Aktiv İnteraksiyalar**: Səs effektləri, skeleton yükləyiciləri, paralaks effekti və Lottie animasiyaları
 
-## React Compiler
+### 📦 Necə işə salmalı?
+1. Asılılıqları yükləyin:
+```bash
+npm install
+```
+2. Layihəni lokal olaraq başladın:
+```bash
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🇬🇧 English
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This project is an interactive 3D portfolio collection designed for "Full Stack 5" students. It offers a visually rich experience using modern web technologies and 3D graphics.
+
+### 🚀 Technologies Used
+* **React & Vite**: Fast and modern web application bundler
+* **Three.js & React Three Fiber**: For building 3D objects and interactive environments
+* **@react-three/drei**: Essential helpers and abstractions for React Three Fiber
+* **Framer Motion, GSAP, Anime.js**: For advanced animations and custom visual effects
+* **Zustand**: For global state management
+* **i18next**: Multi-language support (Azerbaijani and English)
+* **Active Interactions**: Sound effects, skeleton loaders, parallax effect, and Lottie animations
+
+### 📦 How to run?
+1. Install dependencies:
+```bash
+npm install
+```
+2. Run the project locally:
+```bash
+npm run dev
+```

@@ -1,33 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600;800&display=swap');
 
 :root {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #050505; /* Deep dark background */
+  /* IGLOO-INSPIRED CINEMATIC DARK */
+  --bg-color: #0a0a08;
+  --bg-color-secondary: #0e0e0c;
+  --text-main: #e8e4de; /* Off-white / warm */
+  --text-muted: #5a5a52;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --accent-color: #e8e4de;
+  --accent-secondary: #888880;
+
+  --neon-green: #c8ff00; /* Acid green for accents */
+
+  /* Glassmorphism */
+  --glass-bg: rgba(14, 14, 12, 0.7);
+  --glass-bg-hover: rgba(24, 24, 20, 0.85);
+  --glass-border: rgba(232, 228, 222, 0.06);
+  --glass-border-highlight: rgba(232, 228, 222, 0.15);
+
+  --button-hover: rgba(232, 228, 222, 0.04);
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --glow-shadow: none;
+
+  --neon-cyan: #c8ff00;
+  --neon-red: #ff3c3c;
+
+  /* Typography */
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Cormorant Garamond', serif;
+  --font-mono: 'Space Mono', monospace;
+  --font-ui: 'Inter', sans-serif;
+  --dynamic-font: 'Inter', sans-serif;
+
+  --theme-transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+[data-theme='light'] {
+  --bg-color: #f2f0ec;
+  --bg-color-secondary: #faf8f5;
+  --text-main: #1a1a18;
+  --text-muted: #86868b;
+  --glass-bg: rgba(242, 240, 236, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-border-highlight: rgba(0, 0, 0, 0.2);
+  --accent-color: #1a1a18;
+  --accent-secondary: #555;
+  --button-hover: rgba(0, 0, 0, 0.04);
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --glow-shadow: none;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+  border-color: var(--glass-border-highlight);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden; /* Hide scrollbars, we use 3D scroll */
-}
-
-#root {
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-ui);
+  user-select: none;
+  transition: var(--theme-transition);
+  cursor: none;
 }
 
-canvas {
-  touch-action: none; /* Prevent default touch actions for gestures */
+/* IGLOO Custom Cursor */
+.igloo-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--text-main);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transition: transform 0.1s ease;
+}
+
+.igloo-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--text-main);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  mix-blend-mode: difference;
+  opacity: 0.5;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+.igloo-cursor-ring.hovering {
+  width: 60px;
+  height: 60px;
+  opacity: 0.8;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Touch devices - show default cursor */
+@media (hover: none) and (pointer: coarse) {
+  * { cursor: auto !important; }
+  .igloo-cursor-dot,
+  .igloo-cursor-ring { display: none !important; }
 }

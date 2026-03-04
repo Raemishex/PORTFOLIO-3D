@@ -1,0 +1,19 @@
+{
+  "name": "FULL STACK 5 Portfolio",
+  "short_name": "FS5",
+  "description": "Premium interactive portfolio by FULL STACK 5 cohort",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00ff9d",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "portfolio"]
+}

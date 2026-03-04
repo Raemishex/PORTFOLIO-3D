@@ -1,24 +1,28 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, useCallback } from 'react';
+import useStore from '../store/useStore';
 import { students } from '../data/students';
 
 const PortfolioContext = createContext();
 
 export const PortfolioProvider = ({ children }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isZoomed, setIsZoomed] = useState(false);
-  const [audioEnabled, setAudioEnabled] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
+  // Single source of truth: Zustand store
+  const currentIndex = useStore((state) => state.activeStudentIndex);
+  const isPlaying = useStore((state) => state.isPlaying);
+  const setActiveStudentIndex = useStore((state) => state.setActiveStudentIndex);
+  const setPlaying = useStore((state) => state.setPlaying);
 
-  // Navigation Logic
+  const [isZoomed, setIsZoomed] = React.useState(false);
+  const [audioEnabled, setAudioEnabled] = React.useState(false);
+
   const nextStudent = useCallback(() => {
-    if (isZoomed) return; // Prevent nav while zoomed
-    setCurrentIndex((prev) => (prev + 1) % students.length);
-  }, [isZoomed]);
+    if (isZoomed) return;
+    setActiveStudentIndex((currentIndex + 1) % students.length);
+  }, [isZoomed, currentIndex, setActiveStudentIndex]);
 
   const prevStudent = useCallback(() => {
     if (isZoomed) return;
-    setCurrentIndex((prev) => (prev - 1 + students.length) % students.length);
-  }, [isZoomed]);
+    setActiveStudentIndex((currentIndex - 1 + students.length) % students.length);
+  }, [isZoomed, currentIndex, setActiveStudentIndex]);
 
   const toggleZoom = useCallback(() => {
     setIsZoomed((prev) => !prev);
@@ -26,8 +30,8 @@ export const PortfolioProvider = ({ children }) => {
 
   const toggleAudio = useCallback(() => {
     setAudioEnabled((prev) => !prev);
-    setIsPlaying((prev) => !prev); // Sync play state
-  }, []);
+    setPlaying(!isPlaying);
+  }, [isPlaying, setPlaying]);
 
   return (
     <PortfolioContext.Provider

@@ -1,0 +1,84 @@
+/* ============================================
+   MOBILE RESPONSIVE - Full Stack 5 Portfolio
+   ============================================ */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .student-grid-wrapper {
+    padding: 70px 15px 55px;
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  /* Loading Screen */
+  .loading-text {
+    font-size: 1.8rem !important;
+  }
+
+  .loading-subtext {
+    font-size: 0.7rem !important;
+  }
+
+  .loading-counter span {
+    font-size: 1.5rem !important;
+  }
+
+  /* About Page */
+  .about-page-content {
+    padding: 70px 15px 30px !important;
+  }
+
+  /* Contact Page */
+  .contact-form-wrapper {
+    padding: 70px 15px 30px !important;
+  }
+
+  /* Tutorial */
+  .tutorial-overlay {
+    padding: 10px !important;
+  }
+
+  .tutorial-box {
+    width: 95vw !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
+    padding: 20px !important;
+  }
+
+  .tutorial-step {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 5px !important;
+  }
+
+  /* Hide desktop-only overlays on mobile */
+  .gesture-hud,
+  .cursor-trail-canvas,
+  .noise-overlay-canvas {
+    display: none !important;
+  }
+
+  /* Chatbot - smaller on mobile */
+  .chatbot-panel {
+    width: calc(100vw - 30px) !important;
+    height: 350px !important;
+    bottom: 70px !important;
+    left: 10px !important;
+    right: 10px !important;
+  }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .loading-text {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* Safe area for notched phones */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .global-header {
+    padding-top: max(15px, env(safe-area-inset-top)) !important;
+  }
+}

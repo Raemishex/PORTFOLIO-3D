@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact",
+    "games": "Games"
+  },
+  "home": {
+    "title": "SELECT STUDENT",
+    "subtitle": "Click on a student card to view their profile. Use keyboard arrows or swipe on mobile to navigate.",
+    "age": "Age",
+    "skills": "Skills",
+    "about": "About"
+  },
+  "controls": {
+    "sound_on": "Sound On",
+    "sound_off": "Sound Off",
+    "light_mode": "Light Mode",
+    "dark_mode": "Dark Mode"
+  },
+  "tutorial": {
+    "desktop_title": "Tutorial & Controls",
+    "mobile_title": "Mobile Controls",
+    "start_button": "START",
+    "mouse": "Mouse / Trackpad",
+    "mouse_desc": "Click on student cards to view profiles. Scroll to explore content.",
+    "keyboard": "Keyboard",
+    "keyboard_desc": "Use Left/Right arrows to switch students. Press Enter to open profile. Press Escape to go home.",
+    "touch": "Touch Screen",
+    "touch_swipe": "Swipe Left/Right to switch between students.",
+    "touch_tap": "Tap on a student card to open their profile.",
+    "touch_tap_title": "Tap",
+    "touch_down": "Use the back button or swipe down to go back.",
+    "touch_down_title": "Swipe Down",
+    "games": "Games",
+    "games_desc": "Open Games from the navbar to play Memory, Tic-Tac-Toe, Typing Race, and more!"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "FULL STACK 5 is an elite web development cohort dedicated to pushing the boundaries of modern digital experiences. Formed with a vision to merge aesthetic brilliance with robust engineering, we specialize in building immersive, high-performance applications. Our technology stack is carefully curated: React for dynamic user interfaces, Vite for lightning-fast builds, Three.js for 3D rendering, and Framer Motion for smooth animations. Our goal is to set a new standard in the industry, proving that functionality and premium design can coexist flawlessly."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Connect with us digitally.",
+    "name": "Your Name",
+    "email": "Email",
+    "message": "Your Message",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Your message was sent successfully!",
+    "setup_note": "System is ready. Don't forget to set up EmailJS keys."
+  },
+  "footer": {
+    "copyright": "All rights reserved. Design & Development: R. Huseynzade & FS5."
+  },
+  "overlay": {
+    "about_title": "About",
+    "skills_title": "Skills",
+    "close_hint": "Press Escape or click back to close"
+  },
+  "ramazan": {
+    "click_to_unlock": "CLICK TO UNLOCK",
+    "connecting": "Connecting...",
+    "encrypted": "Data is cryptographically encrypted.",
+    "hint": "Please enter the decryption command. Hint: HACK_CORE",
+    "command_accepted": "[OK] Command accepted. Hacking system...",
+    "bypass_success": "Bypass successful.",
+    "data_decrypting": "Decrypting data...",
+    "wrong_command": "[ERROR] Wrong command. Try again."
+  },
+  "secret_video": {
+    "title": "JUST FOR YOU!",
+    "close": "Close / Resume"
+  },
+  "common": {
+    "language": "Language",
+    "student_not_found": "Student not found.",
+    "page_not_found": "This page was not found.",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
+  },
+  "shortcuts": {
+    "title": "Keyboard Shortcuts",
+    "switch_students": "Switch Students",
+    "open_profile": "Open Profile",
+    "go_home": "Go Home",
+    "toggle_help": "Toggle Help",
+    "press_to_close": "Press ? to close"
+  },
+  "guide": {
+    "welcome_title": "Welcome to FULL STACK 5",
+    "welcome_desc": "This interactive guide will walk you through all the features of this premium portfolio experience.",
+    "nav_title": "Navigation",
+    "nav_desc": "Use the top menu to navigate between Home, About, Contact, and Games pages. On mobile, tap the burger menu.",
+    "students_title": "Student Grid",
+    "students_desc": "Click on any student card to view their profile. Drag to reorder. Use arrow keys or swipe on mobile to navigate.",
+    "keyboard_title": "Keyboard Controls",
+    "keyboard_desc": "Arrow Left/Right: Switch students. Enter: Open profile. Escape: Go home. ?: Show shortcuts.",
+    "games_title": "Game Center",
+    "games_desc": "Open Games from the navbar to play Memory, Tic-Tac-Toe, Typing Race, Reaction Test, or draw on the canvas!",
+    "themes_title": "Themes & Customization",
+    "themes_desc": "Toggle dark/light mode from the header. Use the Theme Creator (floating + button) to build your own color scheme.",
+    "extras_title": "Hidden Features",
+    "extras_desc": "Use the chatbot for FAQs. Earn achievement badges by exploring features. Share your favorite profiles! Try the fireworks canvas!",
+    "skip": "Skip",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish"
+  },
+  "games": {
+    "title": "Game Center",
+    "subtitle": "Choose a game to play",
+    "memory": "Memory",
+    "memory_desc": "Match the pairs",
+    "tictactoe": "Tic Tac Toe",
+    "tictactoe_desc": "Beat the AI",
+    "typing": "Type Race",
+    "typing_desc": "Speed typing test",
+    "reaction": "Reaction",
+    "reaction_desc": "Test your reflexes",
+    "draw": "Draw",
+    "draw_desc": "Free canvas",
+    "moves": "MOVES",
+    "restart": "RESTART",
+    "you_win": "YOU WIN!",
+    "you": "YOU",
+    "ai": "AI",
+    "draw_result": "DRAW",
+    "ai_wins": "AI WINS",
+    "play_again": "PLAY AGAIN",
+    "accuracy": "ACCURACY",
+    "best": "BEST",
+    "start_typing": "Start typing...",
+    "try_again": "TRY AGAIN",
+    "click_to_start": "CLICK TO START",
+    "test_reaction": "Test your reaction speed",
+    "wait": "WAIT...",
+    "click_when_green": "Click when it turns green",
+    "click_now": "CLICK NOW!",
+    "too_early": "TOO EARLY!",
+    "click_try_again": "Click to try again",
+    "avg": "AVG",
+    "clear": "CLEAR",
+    "save": "SAVE"
+  },
+  "penalty": {
+    "title": "SYSTEM LOCKDOWN",
+    "line1": "[!] CRITICAL THREAT DETECTED. INITIATING COUNTER-MEASURES...",
+    "line2": "[!] EXTRACTING DEVICE FINGERPRINT...",
+    "os": "OS/BROWSER: {{browser}}",
+    "resolution": "RESOLUTION: {{width}} x {{height}}",
+    "ip": "PUBLIC IP TARGET LOCKED: {{ip}}",
+    "uploading": "[!] UPLOADING DATA TO MAINFRAME...",
+    "dots": "...",
+    "banned": "[!] YOU ARE BANNED FOR 1 HOUR. DO NOT ATTEMPT RE-ENTRY.",
+    "footer": "SECURE CONNECTION SEVERED. DEVICE FLAGGED."
+  }
+}

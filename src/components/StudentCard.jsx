@@ -1,16 +1,66 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, useEffect, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text, MeshTransmissionMaterial } from '@react-three/drei';
+import { Text } from '@react-three/drei';
 import * as THREE from 'three';
 import { getStudentAge } from '../data/students';
-import gsap from 'gsap';
 
-const StudentCard = ({ student, position, isActive, isZoomed, onClick }) => {
+// position üçün standart [0, 0, 0] dəyərini təyin edirik
+const StudentCard = ({ student, position = [0, 0, 0], isActive, isZoomed, onClick }) => {
   const meshRef = useRef();
+  const [texture, setTexture] = useState(null);
   
-  // Basic floating animation
+  // Default Initial Texture (Şəkil yoxdursa)
+  const defaultTexture = useMemo(() => {
+    const initials = student.name
+      .split(' ')
+      .map(n => n[0])
+      .join('')
+      .toUpperCase()
+      .slice(0, 2);
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
+    
+    const hue = (student.name.length * 50) % 360;
+    ctx.fillStyle = `hsl(${hue}, 70%, 50%)`;
+    ctx.fillRect(0, 0, 256, 256);
+    
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 120px Inter, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(initials, 128, 128);
+    
+    return new THREE.CanvasTexture(canvas);
+  }, [student.name]);
+
+  // Əgər student.image varsa, şəkli yüklə. Yoxdursa default inicial olanı göstər.
+  useEffect(() => {
+    if (student.image) {
+      const loader = new THREE.TextureLoader();
+      loader.load(
+        student.image,
+        (loadedTexture) => {
+          // Gözəl keyfiyyət üçün
+          loadedTexture.colorSpace = THREE.SRGBColorSpace;
+          setTexture(loadedTexture);
+        },
+        undefined,
+        (error) => {
+          console.error(`Error loading image for ${student.name}:`, error);
+          setTexture(defaultTexture);
+        }
+      );
+    } else {
+      setTexture(defaultTexture);
+    }
+  }, [student.image, defaultTexture, student.name]);
+
   useFrame((state) => {
     if (meshRef.current && !isActive) {
+      // Artıq position array-i mövcud olduğu üçün çökməyəcək
       meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.1;
     }
   });
@@ -19,60 +69,22 @@ const StudentCard = ({ student, position, isActive, isZoomed, onClick }) => {
     <group position={position} onClick={onClick}>
       <mesh ref={meshRef}>
         <boxGeometry args={[3, 4.5, 0.2]} />
-        <MeshTransmissionMaterial
-          backside
-          samples={16}
-          thickness={0.5}
-          chromaticAberration={0.1}
-          anisotropy={0.1}
-          distortion={0.1}
-          distortionScale={0.1}
-          temporalDistortion={0.1}
-          color={isActive ? "#ffffff" : "#aaaaaa"}
-          transmission={0.95}
-          roughness={0}
+        <meshPhysicalMaterial
+          color={isActive ? "#ffffff" : "#cccccc"}
+          metalness={0.1}
+          roughness={0.2}
+          transparent
+          opacity={0.8}
+          transmission={0} 
+          side={THREE.DoubleSide}
         />
       </mesh>
       
-      {/* Content Layer */}
       <group position={[0, 0, 0.16]}>
-        {/* Programmatic Avatar */}
-        {/* Programmatic Avatar */}
-        {(() => {
-          const texture = useMemo(() => {
-            const initials = student.name
-              .split(' ')
-              .map(n => n[0])
-              .join('')
-              .toUpperCase()
-              .slice(0, 2);
-
-            const canvas = document.createElement('canvas');
-            canvas.width = 256;
-            canvas.height = 256;
-            const ctx = canvas.getContext('2d');
-            
-            // Random background color
-            const hue = (student.name.length * 50) % 360;
-            ctx.fillStyle = `hsl(${hue}, 70%, 50%)`;
-            ctx.fillRect(0, 0, 256, 256);
-            
-            ctx.fillStyle = '#ffffff';
-            ctx.font = 'bold 120px Inter, sans-serif';
-            ctx.textAlign = 'center';
-            ctx.textBaseline = 'middle';
-            ctx.fillText(initials, 128, 128);
-            
-            return new THREE.CanvasTexture(canvas);
-          }, [student.name]);
-
-          return (
-            <mesh position={[0, 0.5, 0]}>
-              <planeGeometry args={[2, 2]} />
-              <meshBasicMaterial map={texture} transparent opacity={0.9} />
-            </mesh>
-          );
-        })()}
+        <mesh position={[0, 0.5, 0]}>
+          <planeGeometry args={[2, 2]} />
+          {texture && <meshBasicMaterial map={texture} transparent opacity={0.9} />}
+        </mesh>
 
         <Text
           position={[0, -1.2, 0]}

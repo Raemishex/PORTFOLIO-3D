@@ -1,0 +1,121 @@
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85); /* Dark cinematic backdrop */
+  backdrop-filter: blur(10px);
+  z-index: 10000; /* Above loading screen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main, #fff);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.tutorial-box {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  background: var(--glass-bg, rgba(20, 20, 20, 0.4));
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(0);
+  animation: popUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popUp {
+  from { transform: translateY(30px) scale(0.95); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.tutorial-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-muted, #aaa);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.tutorial-close-btn:hover {
+  color: var(--text-main, #fff);
+}
+
+.tutorial-box h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  letter-spacing: -0.02em;
+}
+
+.tutorial-subtitle {
+  font-size: 0.85rem;
+  color: var(--accent-color, #00ffcc);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 30px;
+}
+
+.tutorial-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.tutorial-step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tutorial-step .icon {
+  font-size: 1.5rem;
+}
+
+.tutorial-step p {
+  font-size: 0.9rem;
+  color: var(--text-muted, #ccc);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.tutorial-step strong {
+  color: var(--text-main, #fff);
+}
+
+.tutorial-start-btn {
+  background: var(--text-main, #fff);
+  color: var(--bg-color, #000);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tutorial-start-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
