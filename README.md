@@ -2,6 +2,8 @@
 
 ## 🇦🇿 Azərbaycanca
 
+> **⚠️ QEYD: Bu layihə hələ tam bitməyib (Yarımçıqdır / Work in Progress). Hazırda üzərində aktiv şəkildə işlənilir və yeni xüsusiyyətlər, məzmunlar əlavə edilməyə davam edəcək.**
+
 Bu layihə "Full Stack 5" tələbələri üçün hazırlanmış interaktiv 3D portfeliolar toplusudur. Layihə müasir web texnologiyalarından və 3D qrafikasından istifadə edərək istifadəçilərə vizual cəhətdən zəngin bir təcrübə təqdim edir.
 
 ### 🚀 Texnologiyalar
@@ -26,6 +28,8 @@ npm run dev
 ---
 
 ## 🇬🇧 English
+
+> **⚠️ NOTE: This project is still under development (Work in Progress / Incomplete). It is actively being worked on, and new features and content will continue to be added.**
 
 This project is an interactive 3D portfolio collection designed for "Full Stack 5" students. It offers a visually rich experience using modern web technologies and 3D graphics.
 
