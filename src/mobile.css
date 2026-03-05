@@ -82,3 +82,50 @@
     padding-top: max(15px, env(safe-area-inset-top)) !important;
   }
 }
+
+/* Global enhancements for mobile and tablets */
+
+/* Ensure the glass panel fits on all screens */
+.glass-panel {
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* About / Contact / General Pages Container */
+.page-container {
+  padding: 80px 20px 40px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .page-container {
+    padding-top: 90px !important;
+  }
+
+  /* Form inside glass-panel */
+  form input, form textarea, form button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Admin Live Chat mobile adjustments */
+  .admin-live-chat-container {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .admin-live-chat-guests {
+    min-height: 100px !important;
+    border-right: none !important;
+    border-bottom: 1px solid gray !important;
+  }
+
+  .admin-live-chat-box {
+    min-height: 250px !important;
+  }
+}

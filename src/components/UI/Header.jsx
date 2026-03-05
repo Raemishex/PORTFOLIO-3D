@@ -48,10 +48,10 @@ const Header = ({ onOpenGames }) => {
         borderBottom: scrolled ? '1px solid var(--glass-border)' : '1px solid transparent',
       }}
     >
-      <div className="header-brand" onMouseEnter={() => playHover()} onClick={() => playClick()}>
-        <NavLink to="/" className="brand-logo">
+      <div className="header-brand" onMouseEnter={() => playHover()} onClick={() => { playClick(); window.location.href = "/"; }}>
+        <div style={{ cursor: 'pointer' }} className="brand-logo">
           FULL STACK <span className="brand-accent">5</span>
-        </NavLink>
+        </div>
       </div>
 
       <nav className="header-nav desktop-only">

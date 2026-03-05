@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { students } from '../../data/students';
+import { io } from 'socket.io-client';
 
 const FAQ_DATA = {
   en: [
@@ -31,7 +32,23 @@ const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
+  const [socket, setSocket] = useState(null);
   const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    // Initialize Socket connection to the backend
+    // Vite proxy handles `/` to http://localhost:5000 in dev
+    const newSocket = io(window.location.origin.includes('localhost') ? 'http://localhost:5000' : '/');
+    setSocket(newSocket);
+
+    newSocket.on('admin replied', (text) => {
+      setMessages(prev => [...prev, { type: 'admin', text }]);
+    });
+
+    return () => {
+      newSocket.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -78,13 +95,23 @@ const Chatbot = () => {
   const handleSend = () => {
     if (!input.trim()) return;
 
-    const userMsg = { type: 'user', text: input.trim() };
-    const answer = findAnswer(input.trim());
+    const text = input.trim();
+    const userMsg = { type: 'user', text };
 
     setMessages(prev => [...prev, userMsg]);
     setInput('');
 
-    // Simulate typing delay
+    // Send to admin via socket
+    if (socket) {
+      socket.emit('guest message', {
+        guestId: socket.id,
+        text,
+        timestamp: Date.now()
+      });
+    }
+
+    // Still provide the automated FAQ answer
+    const answer = findAnswer(text);
     setTimeout(() => {
       setMessages(prev => [...prev, { type: 'bot', text: answer }]);
     }, 500);

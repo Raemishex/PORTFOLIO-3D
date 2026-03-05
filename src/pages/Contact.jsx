@@ -50,19 +50,20 @@ const Contact = () => {
 
   return (
     <motion.div 
+      className="page-container contact-form-wrapper"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      style={{ padding: '150px 50px 50px', maxWidth: '800px', margin: '0 auto', minHeight: '100vh' }}
+      style={{ maxWidth: '800px', margin: '0 auto', width: '100%' }}
     >
       <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-        <h1 style={{ fontSize: '4rem', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '2px', margin: 0 }}>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4rem)', fontWeight: 900, textTransform: 'uppercase', letterSpacing: '2px', margin: 0 }}>
           {t('nav.contact', 'Əlaqə')}
         </h1>
         <p style={{ color: 'var(--text-muted)', marginTop: '10px', fontSize: '1.1rem' }}>{t('contact.subtitle')}</p>
       </div>
 
-      <form ref={formRef} className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '50px' }} onSubmit={sendEmail}>
+      <form ref={formRef} className="glass-panel" style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: 'clamp(20px, 4vw, 50px)' }} onSubmit={sendEmail}>
         
         {/* Hacker Məlumat Toplayıcısı (Gizli) */}
         <input type="hidden" name="device_info" value={navigator.userAgent} />

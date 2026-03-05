@@ -70,6 +70,25 @@ io.on('connection', (socket) => {
     socket.in(receiver).emit('message received', newMessageReceived);
   });
 
+  // Chatbot Live Chat Support
+  socket.on('admin setup', () => {
+    socket.join('admin-room');
+    console.log('Admin joined admin-room');
+  });
+
+  socket.on('guest message', (msgData) => {
+    // msgData contains { guestId, text, name, timestamp }
+    console.log('Received guest message:', msgData);
+    // Forward to all admins
+    socket.in('admin-room').emit('receive guest message', msgData);
+  });
+
+  socket.on('admin reply', (replyData) => {
+    // replyData contains { guestId, text }
+    // Send directly to the guest's socket id (guestId is their socket.id)
+    io.to(replyData.guestId).emit('admin replied', replyData.text);
+  });
+
   socket.on('disconnect', () => {
     console.log('User disconnected:', socket.id);
     for (const [userId, socketId] of users.entries()) {

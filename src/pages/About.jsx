@@ -35,13 +35,11 @@ const About = () => {
       initial="initial"
       animate="animate"
       exit="exit"
+      className="page-container about-page-content"
       style={{
-        padding: '120px 50px 80px',
         color: 'var(--text-main)',
         maxWidth: '1000px',
         margin: '0 auto',
-        minHeight: '100vh',
-        overflowY: 'auto'
       }}
     >
       <motion.div variants={itemVariants}>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { toast, Toaster } from 'react-hot-toast';
 import useAuthStore from '../store/useAuthStore';
 import './Dashboard.css';
+import AdminLiveChat from '../components/UI/AdminLiveChat';
 
 const Dashboard = () => {
   const { user, updateProfile, logout, isLoading } = useAuthStore();

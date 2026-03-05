@@ -18,6 +18,8 @@ import CursorTrail from './components/UI/CursorTrail';
 import ConfettiBurst from './components/UI/ConfettiBurst';
 import MiniGame from './components/UI/MiniGame';
 import Chatbot from './components/UI/Chatbot';
+import EasterEggHandler from './components/UI/EasterEggHandler';
+import BouncingDVD from './components/UI/BouncingDVD';
 import AchievementSystem from './components/UI/AchievementSystem';
 import { AchievementPanel } from './components/UI/AchievementSystem';
 import InteractiveGuide from './components/UI/InteractiveGuide';
@@ -102,6 +104,8 @@ const AppContent = () => {
       <ConfettiBurst />
       <MiniGame />
       <Chatbot />
+      <EasterEggHandler />
+      <BouncingDVD />
       <AchievementSystem />
       <AnimatedRoutes />
 

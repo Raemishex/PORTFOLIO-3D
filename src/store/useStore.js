@@ -16,6 +16,7 @@ const useStore = create((set) => ({
   gestureZoom: 1,
   handRotation: 0,
   fingerCount: 0,
+  isDvdMode: false,
 
   setActiveStudentIndex: (index) => set({ activeStudentIndex: index }),
   setModalOpen: (isOpen) => set({ isModalOpen: isOpen }),
@@ -31,7 +32,8 @@ const useStore = create((set) => ({
   setHasLoaded: (loaded) => set({ hasLoaded: loaded }),
   setGestureZoom: (zoom) => set({ gestureZoom: zoom }),
   setHandRotation: (rotation) => set({ handRotation: rotation }),
-  setFingerCount: (count) => set({ fingerCount: count })
+  setFingerCount: (count) => set({ fingerCount: count }),
+  toggleDvdMode: () => set((state) => ({ isDvdMode: !state.isDvdMode }))
 }));
 
 export default useStore;

@@ -17,7 +17,7 @@ const ChatModal = ({ isOpen, onClose, receiverId, receiverName }) => {
     const fetchMessages = async () => {
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const { data } = await axios.get(`http://localhost:5000/api/messages/${receiverId}`, config);
+        const { data } = await axios.get(`/api/messages/${receiverId}`, config);
         setMessages(data);
         if (socket) {
            socket.emit('join chat', user._id); // Ensures user room exists
@@ -52,7 +52,7 @@ const ChatModal = ({ isOpen, onClose, receiverId, receiverName }) => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       const { data } = await axios.post(
-        'http://localhost:5000/api/messages',
+        '/api/messages',
         { receiverId, content: newMessage },
         config
       );
