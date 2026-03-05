@@ -27,7 +27,12 @@ const Scene = () => {
   const theme = useStore((state) => state.theme);
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div
+      style={{ width: '100%', height: '100%' }}
+      role="region"
+      aria-label="Interactive 3D Background Scene"
+      aria-hidden="true"
+    >
       <Canvas shadows camera={{ position: [0, 0, 5], fov: 45 }} gl={{ alpha: true }}>
         <CameraRig />
         {/* Dynamic Background handled via CSS CSS background-image */}

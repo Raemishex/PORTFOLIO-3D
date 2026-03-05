@@ -33,7 +33,7 @@ const TypewriterText = ({ text, speed = 30, delay = 0, className = '', style = {
   return (
     <span className={className} style={style}>
       {displayed}
-      {started && indexRef.current < text.length && (
+      {started && text && indexRef.current < text.length && (
         <span style={{
           display: 'inline-block',
           width: '2px',

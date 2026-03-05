@@ -76,6 +76,23 @@ const Header = ({ onOpenGames }) => {
             {t('nav.games', 'Games')}
           </button>
         </MagneticButton>
+        <MagneticButton>
+          <NavLink
+            to="/auth"
+            onMouseEnter={() => playHover()}
+            onClick={() => playClick()}
+            className="nav-link"
+            style={{
+              background: 'var(--neon-green)',
+              color: '#000',
+              padding: '0.4rem 1.2rem',
+              borderRadius: '20px',
+              fontWeight: '700'
+            }}
+          >
+            LOGIN
+          </NavLink>
+        </MagneticButton>
       </nav>
 
       <div className="header-toggles desktop-only">
