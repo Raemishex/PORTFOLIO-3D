@@ -9,13 +9,16 @@ export default defineConfig({
     port: 5173  // Force port 5173
   },
   build: {
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
           'vendor-react': ['react', 'react-dom', 'react-router-dom'],
-          'vendor-three': ['three', '@react-three/fiber', '@react-three/drei'],
+          'vendor-three': ['three'],
+          'vendor-r3f': ['@react-three/fiber', '@react-three/drei'],
           'vendor-animation': ['framer-motion', 'gsap'],
-          'vendor-lottie': ['lottie-web'],
+          'vendor-lottie': ['lottie-react'],
+          'vendor-state': ['zustand']
         }
       }
     }

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { students, getStudentAge, getStudentAbout } from '../data/students';
+import { students, getStudentBySlug, getStudentAge, getStudentAbout } from '../data/students';
 import useStore from '../store/useStore';
 import MagneticButton from '../components/UI/MagneticButton';
 import TypewriterText from '../components/UI/TypewriterText';
@@ -12,13 +12,13 @@ import RamazanLockedProfile from '../components/Profiles/RamazanLockedProfile';
 import { unlockAchievement } from '../components/UI/AchievementSystem';
 
 const StudentDetails = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
   
-  const studentIndex = parseInt(id);
-  const isValidIndex = !isNaN(studentIndex) && studentIndex >= 0 && studentIndex < students.length;
-  const student = isValidIndex ? students[studentIndex] : null;
+  const student = getStudentBySlug(slug);
+  const isValidIndex = !!student;
+  const studentIndex = isValidIndex ? students.findIndex((s) => s.slug === slug) : -1;
 
   // Optionally update global store focus
   const setActiveStudentIndex = useStore((state) => state.setActiveStudentIndex);
@@ -29,8 +29,8 @@ const StudentDetails = () => {
       document.body.style.setProperty('--dynamic-font', student.typography);
       // Track achievement: count viewed students
       const viewed = JSON.parse(localStorage.getItem('fs5_viewed_students') || '[]');
-      if (!viewed.includes(studentIndex)) {
-        viewed.push(studentIndex);
+      if (!viewed.includes(student.id)) {
+        viewed.push(student.id);
         localStorage.setItem('fs5_viewed_students', JSON.stringify(viewed));
       }
       if (viewed.length >= 3) unlockAchievement('view_3_students');

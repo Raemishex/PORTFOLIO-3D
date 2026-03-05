@@ -1,4 +1,8 @@
-export const students = [
+const createSlug = (name) => {
+  return name.toLowerCase().replace(/ə/g, 'e').replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ı/g, 'i').replace(/ /g, '-').replace(/[^\w-]+/g, '');
+};
+
+const studentsData = [
   {
     id: 1,
     name: 'Cəfər Tarverdiyev',
@@ -151,6 +155,15 @@ export const students = [
     socials: { instagram: '#', linkedin: '#' }
   }
 ];
+
+export const students = studentsData.map(student => ({
+  ...student,
+  slug: createSlug(student.name)
+}));
+
+export const getStudentBySlug = (slug) => {
+  return students.find(s => s.slug === slug);
+};
 
 import { calculateAge } from '../utils/age';
 export const getStudentAge = (student) => {
